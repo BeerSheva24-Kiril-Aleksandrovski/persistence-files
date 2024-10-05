@@ -1,0 +1,27 @@
+package telran.persistence;
+
+public class CodeCommentsSeparation {
+    public static void main(String[] args) { 
+        System.out.println(args[1]);        
+        //TODO - data from args[0] split to two files: args[1], args[2]
+        //for sake of simplicity comments may be only on one line, like comments at this file
+        // /* */ cannot be
+        // code ...// comment .... cannot be
+             //However // may be not only at beginning of line, like this 
+        //args[0] - path to file containing code and comments 
+        //args[1] - path to file for placing only code
+        //args[2] - path to file for placing only comments
+    }
+
+    @Test
+    void isOneSwapTest() {
+        assertTrue(isOneSwap(new int[] { 1, 5, 3, 4, 2, 5 }));          
+        assertFalse(isOneSwap(new int[] { 1, 2, 3, 4, 5, 6, 1, 4 }));   
+        assertTrue(isOneSwap(new int[] { 1, 6, 3, 4, 5, 2, 6 }));       
+        //need to swap 7 and 1 => number of swaps = 1
+       
+      
+    }
+
+}
+    
