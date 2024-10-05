@@ -7,7 +7,7 @@ public class CodeCommentsSeparation {
 
         //TODO - data from args[0] split to two files: args[1], args[2]
 
-        /*  
+        /** 
         * args[0] - path to file containing code and comments 
         * args[1] - path to file for placing only code
         * args[2] - path to file for placing only comments 
