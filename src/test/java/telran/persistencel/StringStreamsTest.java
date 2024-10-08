@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 import java.nio.file.SimpleFileVisitor;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.EnumSet;
-import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.jupiter.api.Disabled;
@@ -59,6 +58,7 @@ public class StringStreamsTest {
         Path rootPath = Paths.get(dirPath);
         Set<FileVisitOption> options = EnumSet.of(FileVisitOption.FOLLOW_LINKS);
 
+        try {
         Files.walkFileTree(rootPath, options, depth, new SimpleFileVisitor<Path>() {
             @Override
             public FileVisitResult preVisitDirectory(Path path, BasicFileAttributes attr) throws IOException {
@@ -74,6 +74,9 @@ public class StringStreamsTest {
                 return FileVisitResult.CONTINUE;
             }
         });
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 
     //TODO
     //Dir1

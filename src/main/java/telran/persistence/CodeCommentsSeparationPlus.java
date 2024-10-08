@@ -1,7 +1,5 @@
 package telran.persistence;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
@@ -24,6 +22,9 @@ public class CodeCommentsSeparationPlus {
         // args[0] - path to file containing code and comments
         // args[1] - path to file for placing only code
         // args[2] - path to file for placing only comments
+        if (args == null || args.length < 3) {
+            new IllegalArgumentException();
+        }
 
         Path filePath = Paths.get(args[0]);
         String content = new String(Files.readAllBytes(filePath));

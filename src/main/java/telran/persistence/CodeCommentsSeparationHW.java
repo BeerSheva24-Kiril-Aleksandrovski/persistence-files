@@ -15,7 +15,10 @@ public class CodeCommentsSeparationHW {
         // However // may be not only at beginning of line, like this
         // args[0] - path to file containing code and comments
         // args[1] - path to file for placing only code
-        // args[2] - path to file for placing only comments
+        // args[2] - path to file for placing only comments   
+        if (args == null || args.length < 3) {
+            new IllegalArgumentException();
+        }
 
         BufferedReader reader = new BufferedReader(new FileReader(args[0]));
         PrintWriter writeCode = new PrintWriter(args[1]);
